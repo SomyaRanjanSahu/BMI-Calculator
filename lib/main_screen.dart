@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'container_box.dart';
+import 'data_container.dart';
+
+const activeColor = Colors.pink;
+const inActieColor = Color(0xFFffffff);
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -21,52 +27,45 @@ class _MainScreenState extends State<MainScreen> {
               child: Row(
             children: <Widget>[
               Expanded(
-                child: ContainerBox(boxColor: const Color(0xFFffffff)),
+                child: ContainerBox(
+                  boxColor: const Color(0xFFffffff),
+                  childWidget:
+                      DataContainer(icon: FontAwesomeIcons.mars, title: "MALE"),
+                ),
               ),
               Expanded(
-                child: ContainerBox(boxColor: const Color(0xFFffffff)),
+                child: ContainerBox(
+                    boxColor: const Color(0xFFffffff),
+                    childWidget: DataContainer(
+                        icon: FontAwesomeIcons.venus, title: "FEMALE")),
               ),
             ],
           )),
           Expanded(
-            child: ContainerBox(boxColor: const Color(0xFFffffff)),
+            child: ContainerBox(
+                boxColor: const Color(0xFFffffff),
+                childWidget:
+                    DataContainer(icon: FontAwesomeIcons.ban, title: "None")),
           ),
           Expanded(
               child: Row(
             children: <Widget>[
               Expanded(
-                child: ContainerBox(boxColor: const Color(0xFFffffff)),
+                child: ContainerBox(
+                    boxColor: const Color(0xFFffffff),
+                    childWidget: DataContainer(
+                        icon: FontAwesomeIcons.ban, title: "None")),
               ),
               Expanded(
-                child: ContainerBox(boxColor: const Color(0xFFffffff)),
+                child: ContainerBox(
+                    boxColor: const Color(0xFFffffff),
+                    childWidget: DataContainer(
+                        icon: FontAwesomeIcons.ban, title: "None")),
               ),
             ],
           )),
         ],
       ),
-    );
-  }
-}
-
-class ContainerBox extends StatelessWidget {
-  ContainerBox({required this.boxColor});
-  final Color boxColor;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          color: boxColor,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 5.0,
-              blurRadius: 7.0,
-              offset: const Offset(0, 3),
-            )
-          ]),
     );
   }
 }
