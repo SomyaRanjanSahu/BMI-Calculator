@@ -16,6 +16,9 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   Color maleBoxColor = activeColor;
   Color femaleBoxColor = inActiveColor;
+  int height = 180;
+  int weight = 70;
+  int age = 25;
 
   void updateBoxColor(int gender) {
     if (gender == 1) {
@@ -89,10 +92,22 @@ class _MainScreenState extends State<MainScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.baseline,
                     textBaseline: TextBaseline.alphabetic,
-                    children: const <Widget>[
-                      Text("180", style: textStyle2),
-                      Text("cm", style: textStyle1),
+                    children: <Widget>[
+                      Text(height.toString(), style: textStyle2),
+                      const Text("cm", style: textStyle1),
                     ],
+                  ),
+                  Slider(
+                    value: height.toDouble(),
+                    min: 120,
+                    max: 220,
+                    activeColor: activeColor,
+                    inactiveColor: inActiveColor,
+                    onChanged: (double newValue) {
+                      setState(() {
+                        height = newValue.round();
+                      });
+                    },
                   )
                 ],
               ),
@@ -104,22 +119,101 @@ class _MainScreenState extends State<MainScreen> {
               Expanded(
                 child: ContainerBox(
                     boxColor: const Color(0xFFffffff),
-                    childWidget: DataContainer(
-                        icon: FontAwesomeIcons.ban, title: "None")),
+                    childWidget: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        const Text("WEIGHT", style: textStyle1),
+                        Text(weight.toString(), style: textStyle2),
+                        const SizedBox(
+                          height: 5.0,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            FloatingActionButton(
+                              backgroundColor: activeColor,
+                              child: const Icon(FontAwesomeIcons.plus,
+                                  color: Colors.white),
+                              onPressed: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
+                            ),
+                            const SizedBox(width: 10.0),
+                            FloatingActionButton(
+                                backgroundColor: activeColor,
+                                child: const Icon(FontAwesomeIcons.minus,
+                                    color: Colors.white),
+                                onPressed: () {
+                                  setState(() {
+                                    if (weight > 1) {
+                                      weight--;
+                                    }
+                                  });
+                                })
+                          ],
+                        )
+                      ],
+                    )),
               ),
               Expanded(
                 child: ContainerBox(
                     boxColor: const Color(0xFFffffff),
-                    childWidget: DataContainer(
-                        icon: FontAwesomeIcons.ban, title: "None")),
+                    childWidget: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        const Text("AGE", style: textStyle1),
+                        Text(age.toString(), style: textStyle2),
+                        const SizedBox(
+                          height: 5.0,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            FloatingActionButton(
+                              backgroundColor: activeColor,
+                              child: const Icon(FontAwesomeIcons.plus,
+                                  color: Colors.white),
+                              onPressed: () {
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                            ),
+                            const SizedBox(width: 10.0),
+                            FloatingActionButton(
+                                backgroundColor: activeColor,
+                                child: const Icon(FontAwesomeIcons.minus,
+                                    color: Colors.white),
+                                onPressed: () {
+                                  setState(() {
+                                    if (age > 1) {
+                                      age--;
+                                    }
+                                  });
+                                })
+                          ],
+                        )
+                      ],
+                    )),
               ),
             ],
           )),
           Container(
-            width: double.infinity,
-            height: 80.0,
-            color: activeColor,
-            margin: const EdgeInsets.only(top: 10.0),
+            child: const Center(
+              child: Text(
+                "Calculate",
+                style: textStyle3,
+              ),
+            ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30.0),
+              color: activeColor,
+            ),
+            width: 356.0,
+            height: 60.0,
+            margin: const EdgeInsets.only(bottom: 15.0, top: 10.0),
           )
         ],
       ),

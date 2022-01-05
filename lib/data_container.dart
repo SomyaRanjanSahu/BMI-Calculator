@@ -11,6 +11,11 @@ const textStyle2 = TextStyle(
   fontWeight: FontWeight.w900,
 );
 
+const textStyle3 = TextStyle(
+  color: Color(0xFFffffff),
+  fontSize: 27.0,
+);
+
 class DataContainer extends StatelessWidget {
   DataContainer({required this.icon, required this.title});
   final IconData icon;
