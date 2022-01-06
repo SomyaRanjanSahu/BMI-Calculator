@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ContainerBox extends StatelessWidget {
-  ContainerBox({required this.boxColor, required this.childWidget});
+  const ContainerBox({Key? key, required this.boxColor, required this.childWidget}) : super(key: key);
   final Color boxColor;
   final Widget childWidget;
 

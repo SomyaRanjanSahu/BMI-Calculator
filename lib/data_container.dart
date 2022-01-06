@@ -17,7 +17,7 @@ const textStyle3 = TextStyle(
 );
 
 class DataContainer extends StatelessWidget {
-  DataContainer({required this.icon, required this.title});
+  const DataContainer({Key? key, required this.icon, required this.title}) : super(key: key);
   final IconData icon;
   final String title;
 
