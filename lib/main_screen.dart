@@ -4,8 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'container_box.dart';
 import 'data_container.dart';
 
-const activeColor = Colors.pink;
-const inActiveColor = Color(0xFFffffff);
+final activeColor = Colors.cyan.shade800;
+const inActiveColor = Color(0xFF212121);
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -21,7 +21,7 @@ class _MainScreenState extends State<MainScreen> {
   int weight = 70;
   int age = 25;
   String result = "";
-  String resultDetail = "result here";
+  String resultDetail = "";
   double bmi = 0;
 
   void updateBoxColor(int gender) {
@@ -102,7 +102,7 @@ class _MainScreenState extends State<MainScreen> {
           )),
           Expanded(
             child: ContainerBox(
-              boxColor: const Color(0xFFffffff),
+              boxColor: inActiveColor,
               childWidget: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -121,7 +121,7 @@ class _MainScreenState extends State<MainScreen> {
                     min: 120,
                     max: 220,
                     activeColor: activeColor,
-                    inactiveColor: inActiveColor,
+                    inactiveColor: Colors.grey.shade800,
                     onChanged: (double newValue) {
                       setState(() {
                         height = newValue.round();
@@ -137,7 +137,7 @@ class _MainScreenState extends State<MainScreen> {
             children: <Widget>[
               Expanded(
                 child: ContainerBox(
-                    boxColor: const Color(0xFFffffff),
+                    boxColor: inActiveColor,
                     childWidget: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -178,7 +178,7 @@ class _MainScreenState extends State<MainScreen> {
               ),
               Expanded(
                 child: ContainerBox(
-                    boxColor: const Color(0xFFffffff),
+                    boxColor: inActiveColor,
                     childWidget: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -228,10 +228,12 @@ class _MainScreenState extends State<MainScreen> {
                       context: context,
                       builder: (BuildContext context) {
                         return Dialog(
+                          backgroundColor: inActiveColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20.0),
                           ),
                           child: Container(
+                            color: inActiveColor,
                             height: 200.0,
                             margin: const EdgeInsets.all(10.0),
                             child: Column(
@@ -241,9 +243,13 @@ class _MainScreenState extends State<MainScreen> {
                                   "Result",
                                   style: textStyle1,
                                 ),
-                                Text(
-                                  result.toString(),
-                                  style: textStyle2,
+                                Container(
+                                  margin: const EdgeInsets.only(
+                                      top: 5.0, bottom: 5.0),
+                                  child: Text(
+                                    result.toString(),
+                                    style: textStyle2,
+                                  ),
                                 ),
                                 Text(
                                   resultDetail,

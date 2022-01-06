@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 const textStyle1 = TextStyle(
-  color: Color(0xFF000000),
+  color: Color(0xFFffffff),
   fontSize: 18.0,
 );
 
 const textStyle2 = TextStyle(
-  color: Color(0xFF000000),
+  color: Color(0xFFffffff),
   fontSize: 40.0,
   fontWeight: FontWeight.w900,
 );
@@ -29,6 +29,7 @@ class DataContainer extends StatelessWidget {
         Icon(
           icon,
           size: 80.0,
+          color: Colors.white,
         ),
         const SizedBox(height: 15.0),
         Text(title, style: textStyle1),
