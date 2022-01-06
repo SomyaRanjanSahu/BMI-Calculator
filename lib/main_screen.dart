@@ -19,6 +19,8 @@ class _MainScreenState extends State<MainScreen> {
   int height = 180;
   int weight = 70;
   int age = 25;
+  int result = 80;
+  String resultDetail = "result here";
 
   void updateBoxColor(int gender) {
     if (gender == 1) {
@@ -200,21 +202,54 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ],
           )),
-          Container(
-            child: const Center(
-              child: Text(
-                "Calculate",
-                style: textStyle3,
-              ),
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30.0),
-              color: activeColor,
-            ),
-            width: 356.0,
-            height: 60.0,
-            margin: const EdgeInsets.only(bottom: 15.0, top: 10.0),
-          )
+          GestureDetector(
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return Dialog(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        child: Container(
+                          height: 200.0,
+                          margin: const EdgeInsets.all(10.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              const Text(
+                                "Result",
+                                style: textStyle1,
+                              ),
+                              Text(
+                                result.toString(),
+                                style: textStyle2,
+                              ),
+                              Text(
+                                resultDetail,
+                                style: textStyle1,
+                              )
+                            ],
+                          ),
+                        ),
+                      );
+                    });
+              },
+              child: Container(
+                child: const Center(
+                  child: Text(
+                    "Calculate",
+                    style: textStyle3,
+                  ),
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30.0),
+                  color: activeColor,
+                ),
+                width: 356.0,
+                height: 60.0,
+                margin: const EdgeInsets.only(bottom: 15.0, top: 10.0),
+              ))
         ],
       ),
     );
