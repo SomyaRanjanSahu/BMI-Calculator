@@ -1,6 +1,24 @@
-# bmi_calculator
+![](https://img.shields.io/badge/Application-BMI_Calculator-yellow.svg)
+![](https://img.shields.io/badge/Programming_Language-Dart-blue.svg)
+![](https://img.shields.io/badge/Framework_Used-Flutter-brown.svg)
+![](https://img.shields.io/badge/Dart_Version-2.15.1-skyblue.svg)
+![](https://img.shields.io/badge/Flutter_Version-2.8.1-skyblue.svg)
+![](https://img.shields.io/badge/Level-Basic-red.svg)
+![](https://img.shields.io/badge/Status-Complete-green.svg)
 
-BMI Calculator App
+<h1 align="center">BMI Calculator</h1>
+
+<p align="center">
+<img src="https://i.postimg.cc/fy8hzcrk/mockup-1.png" width=250 /> 
+<img src="https://i.postimg.cc/285DHt1W/mockup-2.png" width=250 />
+<img src="https://i.postimg.cc/59gJSJ21/mockup-3.png" width=250 />
+</p>
+
+<h3 align="center"> Body-Mass-Index Calculator made with Flutter  <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="flutter" width="20" height="20"/> </a></h3>
+
+### [<p align="center">🔗 Demo video </p>](https://github.com/SomyaRanjanSahu/BMICalculatorApp)
+
+<h3 align="center"> Show ❤️ by Starring this Repo </h3>
 
 ## Getting Started
 
