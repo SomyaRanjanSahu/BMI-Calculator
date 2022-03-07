@@ -16,7 +16,7 @@
 
 <h3 align="center"> Body-Mass-Index Calculator made with Flutter  <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="flutter" width="20" height="20"/> </a></h3>
 
-### [<p align="center">🔗 Demo video </p>](https://github.com/SomyaRanjanSahu/BMICalculatorApp)
+### [<p align="center">🔗 Demo video </p>](https://youtu.be/7GBlsx2jPI4)
 
 <h3 align="center"> Show ❤️ by Starring this Repo </h3>
 
